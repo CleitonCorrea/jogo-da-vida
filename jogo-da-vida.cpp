@@ -1,7 +1,8 @@
 //Autor Cleiton Correa
 //Data 23/11/2014
-//Vers„o 4.0
+//Vers√£o 4.0
 //Objetivo: Simular o Jogo da Vida de Jonw Cowen
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
@@ -10,10 +11,11 @@
 #include "conio.h"
 #include "windows.h"
 #include <locale.h>
+#include <locale.h>
 using namespace std;
 
 
-//	Construindo a matriz que foi digitada pelo usu·rio.
+//	Construindo a matriz que foi digitada pelo usu√°rio.
 
 int mat(int *a,int replica[5][5])
     {
@@ -56,7 +58,7 @@ int mat(int *a,int replica[5][5])
     }
 	if(*a==6)
 	{
-		cout<<"Preencha as posiÁıes da matriz"<<endl;
+		cout<<"Preencha as posi√ß√µes da matriz"<<endl;
             for(i=0;i<5;i++)
 			{
                 for(j=0;j<5;j++)
@@ -65,7 +67,7 @@ int mat(int *a,int replica[5][5])
 					k=0;
 					while(k<1)
 					{
-						cout<<"Valor das posiÁıes: 1 para vivo e 0 para morto\n\n"<<endl;
+						cout<<"Valor das posi√ß√µes: 1 para vivo e 0 para morto\n\n"<<endl;
 						for(l=0;l<5;l++)
 						{
 							cout<<"\t\t\t";
@@ -125,10 +127,10 @@ void matrizreplica(int replica[5][5])
 }
 
 /*
-	A funÁ„o abaixo faz a verificaÁ„o das celulas vivas, acumulando a
+	A fun√ß√£o abaixo faz a verifica√ß√£o das celulas vivas, acumulando a
 	quantidade em um contador chamado verd, ao final conforme as regras
-	ele determinar· se a celula viva permanece viva ou morre e, se uma
-	celula morta viver·.
+	ele determinar√° se a celula viva permanece viva ou morre e, se uma
+	celula morta viver√°.
 */
 
 int verifica(int matriz[25][75],char matrizchar[25][75])
@@ -145,7 +147,7 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 	}
 /*Fim da transferencia de conteudos entre as matrizes.
 
-               Inicio dos testes de posiÁıes:
+               Inicio dos testes de posi√ß√µes:
 			   Vou descrever a matriz da seguinte forma:
 					  A B C
 					  D E F
@@ -153,13 +155,13 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 
 			   Sendo:
                    A canto superior esquerdo
-                   B posiÁıes entre cantos A e C
+                   B posi√ß√µes entre cantos A e C
                    C canto superior direito
-                   D posiÁıes entre cantos A e G
-                   E posiÁıes no meio da matriz
-                   F posiÁıes entre os cantos C e I
+                   D posi√ß√µes entre cantos A e G
+                   E posi√ß√µes no meio da matriz
+                   F posi√ß√µes entre os cantos C e I
                    G canto inferior esquerdo
-                   H posiÁıes entre os cantos G e I
+                   H posi√ß√µes entre os cantos G e I
                    I canto inferior direito
                    */
 
@@ -168,7 +170,7 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 	   for(j=0;j<75;j++)//--Contador/gerador de colunas
 	   {
 		 verd=0;
-		 if(i==0&&j==0)//--Verifica posiÁ„o de canto A
+		 if(i==0&&j==0)//--Verifica posi√ß√£o de canto A
 		 {
 			if(reflex[i][j+1]==1)
 			{
@@ -184,7 +186,7 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 			}
 		 }
 
-		 if(i==0&&(j>0&&j<74))       //Verifica posiÁıes entre cantos B
+		 if(i==0&&(j>0&&j<74))       //Verifica posi√ß√µes entre cantos B
 		 {
 			if(reflex[i][j-1]==1)
 			{
@@ -207,7 +209,7 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 			verd++;
 			}
 		 }
-		 if(i==0&&(j==74))     //Verifica posiÁ„o de canto C
+		 if(i==0&&(j==74))     //Verifica posi√ß√£o de canto C
 		 {
 			if(reflex[i][j-1]==1)
 			{
@@ -223,7 +225,7 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 			}
 
 		 }
-		 if(i==24&&j==0)      //Verifica posiÁ„o de canto G
+		 if(i==24&&j==0)      //Verifica posi√ß√£o de canto G
 		 {
 			if(reflex[i-1][j]==1)
 			{
@@ -238,7 +240,7 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 			verd++;
 			}
 		 }
-		 if(i==24&&j==74)    //Verifica posiÁ„o de Canto I
+		 if(i==24&&j==74)    //Verifica posi√ß√£o de Canto I
 		 {
 			if(reflex[i-1][j]==1)
 			{
@@ -254,7 +256,7 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 			}
 		 }
 
-		 if((i!=0&&j!=74)&&(i!=24&&j!=0))  //Verifica as posiÁıes centrais E
+		 if((i!=0&&j!=74)&&(i!=24&&j!=0))  //Verifica as posi√ß√µes centrais E
 		 {
 			if(reflex[i-1][j]==1)
 			{
@@ -288,9 +290,9 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 			{
 			verd++;
 			}
-		 }         //Fim dos testes de posiÁıes
+		 }         //Fim dos testes de posi√ß√µes
 
-		 if(verd<2&&(matriz[i][j]==1))      //Inicio das alteraÁıes na matriz original
+		 if(verd<2&&(matriz[i][j]==1))      //Inicio das altera√ß√µes na matriz original
 		 {
 		 matriz[i][j]=0;
 		 }
@@ -317,7 +319,7 @@ int verifica(int matriz[25][75],char matrizchar[25][75])
 return somavivo;
 }
 
-/* A FunÁ„o abaixo faz a replica da Matriz de 5x5 (replica) na
+/* A Fun√ß√£o abaixo faz a replica da Matriz de 5x5 (replica) na
    matriz 25x75.
 */
 int replicando(int matriz[25][75], int replica[5][5])
@@ -359,11 +361,11 @@ void estatisticas(int *opcao,int *quant, int *totalvivos,int *vivos,int *gervivo
 
 }
 
-// Esta rotina mostrar· o grafico do jogo referente a evoluÁ„o das geraÁıes caso houver
+// Esta rotina mostrar√° o grafico do jogo referente a evolu√ß√£o das gera√ß√µes caso houver
 void vergrafico(int grafico[1000],int *quant)
 {
 	int i,j,para;
-	cout<<"Evolucao da GeraÁ„o Atual"<<endl;
+	cout<<"Evolucao da Gera√ß√£o Atual"<<endl;
 	for(i=0;i<*quant;i++)
 	{
 		para=grafico[i]/10;//calculo para a demonstracao de 60 colunas
@@ -378,14 +380,14 @@ void vergrafico(int grafico[1000],int *quant)
 	}
 }
 
-//Inicio do mÈtodo main
+//Inicio do m√©todo main
 
 int main()
 {
 	int i,j,opcao,matriz[25][75],replica[5][5],grafico[1000],quant,escolha,totalvivo=0,gervivos=0,vivos=0,cont=0,pausa=100,opausa;
 	char matrizchar[25][75],vivo='*',morto=' ';
 
-	 setlocale(LC_ALL, "Portuguese"); // funÁ„o da biblioteca locale para acentuar as strings do meu programa
+	 setlocale(LC_ALL, "Portuguese"); // fun√ß√£o da biblioteca locale para acentuar as strings do meu programa
 
 //Preenchendo a matriz inicial com 0
 
@@ -419,7 +421,7 @@ for(i=0;i<25;i++)
 	system("cls");
 	i=0;
 
-// Matriz ReplÌca, vocÍ pode escolher uma das opÁıes padr„o do jogo ou fazer sua prÛpria matriz
+// Matriz Repl√≠ca, voc√™ pode escolher uma das op√ß√µes padr√£o do jogo ou fazer sua pr√≥pria matriz
 	for(i=0;i<5;i++)
 	{
 	   for(j=0;j<5;j++)
@@ -428,7 +430,7 @@ for(i=0;i<25;i++)
 	   }
 	}
 
-	cout<<"VocÍ poder· escolher nossas opÁıes padr„o:"<<endl;
+	cout<<"Voc√™ poder√° escolher nossas op√ß√µes padr√£o:"<<endl;
 	cout<< "1:\t"<<"00000"<<"\t2:"<<"\t00000"<<"\t3:"<<"\t00000"<<"\t4:"<<"\t00000"<<"\t5:"<<"\t00000"<<endl;
 	cout<< " \t"<<"00000"<<"\t "<<"\t01100"<<"\t "<<"\t01110"<<"\t "<<"\t00100"<<"\t "<<"\t00110"<<endl;
 	cout<< " \t"<<"01110"<<"\t "<<"\t01100"<<"\t "<<"\t00100"<<"\t "<<"\t00010"<<"\t "<<"\t01100"<<endl;
@@ -458,14 +460,14 @@ for(i=0;i<25;i++)
 	   }
 		cout<<endl;
 	}
-	cout<<"\n\n Quantos ciclos de gerÁıes vocÍ deseja?"<<endl;
+	cout<<"\n\n Quantos ciclos de ger√ß√µes voc√™ deseja?"<<endl;
 	cin>>opcao;
 	system("cls");
-	cout<<"Pause para ver as mudanÁas a cada ciclo\n\n 1 - SIM \n 2 - NAO:"<<endl;
+	cout<<"Pause para ver as mudan√ßas a cada ciclo\n\n 1 - SIM \n 2 - NAO:"<<endl;
 	cin>>opausa;
 	if(opausa==1)
 	{
-		cout<<"\nInforme o tempo em milÈssimos de segundos (1000 milisegundos = 1 segundo)"<<endl;
+		cout<<"\nInforme o tempo em mil√©ssimos de segundos (1000 milisegundos = 1 segundo)"<<endl;
 		cin>>pausa;
 	}
 	cout<<"E possivel alterar o sinal de vivos e mortos para caracteres deseja utilizar?\nDigite 1 para sim e 2 para nao:"<<endl;
